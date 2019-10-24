@@ -21,179 +21,30 @@
 <div class="blog-area pt-150 ">
     <div class="container">
         <div class="row">
+            @foreach($show_news as $vt_show_news)
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="single-blog mb-60">
                     <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog1.jpg" alt="blog"></a>
+                        <a href="{{route('detailnews',$vt_show_news->slug)}}"><img src="{{$common_data['hosts'].'/storage/'.$vt_show_news->image}}" alt="blog"></a>
                         <div class="blog-hover">
                             <i class="fa fa-link"></i>
                         </div>
                     </div>
                     <div class="blog-content">
                         <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
+                            <p>{{$vt_show_news->created_at}}</p>
                         </div>
                         <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
+                            <h2><a href="{{route('detailnews',$vt_show_news->slug)}}">{{$vt_show_news->title}}</a></h2>
+                            <a href="{{route('detailnews',$vt_show_news->slug)}}">Đọc thêm</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-blog mb-60">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog2.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-blog mb-60">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog3.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-blog mb-60">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog4.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-blog mb-60">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog5.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-blog mb-60">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog6.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 hidden-xs">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog7.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 hidden-xs">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog8.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 hidden-sm col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="{{route('detailnews')}}"><img src="img/blog/blog9.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <i class="fa fa-link"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex / June 20, 2017 / <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="{{route('detailnews')}}">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="{{route('detailnews')}}">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            <div class="link-next">{{ $show_news->links() }}</div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-xs-12">
                 <div class="pagination">
                     <ul>
@@ -203,7 +54,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- Blog End -->

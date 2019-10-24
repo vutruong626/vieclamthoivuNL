@@ -6,9 +6,8 @@
 
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="header-top-left" style="padding: 5px 0px;">
-                        <p> <i class="fa fa-phone"></i> Hotline: <strong style="font-weight: 700;">0961359069 -
-                                0909124440</strong>
-                            | <i class="fa fa-envelope"></i> <strong style="">nguyenlan.hr04@gmail.com</strong>
+                        <p> <i class="fa fa-phone"></i> Hotline: <strong style="font-weight: 700;">{{$common_data['show_contact']->phone}}</strong>
+                            | <i class="fa fa-envelope"></i> <strong style="">{{$common_data['show_contact']->email}}</strong>
                         </p>
                         <!-- <span class="header_info_hotline_nl"><i class="fa fa-phone"></i> Hotline
                             <span class="hotline_phone">
@@ -22,8 +21,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="header-top-right text-right">
                         <ul>
-                            <li><a href=""><i class="fa fa-map-marker"></i> 592/ 17 Nguyễn Văn Quá. P. Đông Hưng Thuận,
-                                    Quận 12 TP.HCM
+                            <li><a href=""><i class="fa fa-map-marker"></i> {{$common_data['show_contact']->address}}
                                 </a></li>
                             <!-- <li><a href="signup.html">signup</a></li> -->
                         </ul>
@@ -35,14 +33,14 @@
     <div class="header-area two an-nd">
         <div class="logo-vt">
             <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="col-md-3 col-sm-3 col-xs-12">
                     <div class="logo-nl">
-                        <a href="index.html"><img src="{{asset('img/logo/nguyenlan.png')}}" alt="eduhome" /></a>
+                        <a href="/"><img src="{{$common_data['hosts'].'/img/logo/nguyenlan.png'}}" alt="eduhome" /></a>
                     </div>
                 </div>
-                <div class="col-md-9 col-sm-9 col-xs-6">
-                    <h1 class="font-showdow-vt">Công ty TNHH Cung Ứng Nhân Lực Nguyễn Lan</h1>
-                    <p class="header_logo_intro-vt">Kênh việc làm uy tín - chất lượng - không thu phí người lao động</p>
+                <div class="col-md-9 col-sm-9 col-xs-6 ">
+                    <h1 class="font-showdow-vt dsb">Công ty TNHH Cung Ứng Nhân Lực Nguyễn Lan</h1>
+                    <p class="header_logo_intro-vt dsb">Kênh việc làm uy tín - chất lượng - không thu phí người lao động</p>
                 </div>
             </div>
         </div>
@@ -51,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content-wrapper text-right">
+                    <div class="content-wrapper text-right djswu">
                         <!-- Main Menu Start -->
                         <div class="main-menu">
                             <nav class="active-vt">
@@ -73,8 +71,8 @@
 
                                     </li> -->
                                     <li
-                                        class="hidden-sm {{Request::is('dang-ky-viec-tim-nguoi.html') ? 'active' : ''}}">
-                                        <a href="{{route('registerfornttow')}}">Tin tuyển dụng</a>
+                                        class="hidden-sm {{Request::is('cong-viec-moi-nhat.html') ? 'active' : ''}}">
+                                        <a href="{{route('new_work')}}">Tin tuyển dụng</a>
 
                                     </li>
                                     <li class="{{Request::is('tin-tuc.html') ? 'active' : ''}}"><a

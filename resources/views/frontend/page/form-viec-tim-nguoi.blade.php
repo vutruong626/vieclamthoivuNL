@@ -24,38 +24,40 @@
         <div class="row">
             <div class="col-75">
                 <div class="container-vt">
-                    <form action="" method="POST">
+                    <form action="{{route('post_registerfornttow')}}" method="post">
+                        {{csrf_field()}}
                         <div class="row">
                             <div class="col-50">
                                 <h3>Thông tin bắt buộc</h3>
                                 <br>
                                 <label for="fname"><i class="fa fa-user"></i> Họ tên</label>
-                                <input type="text" id="fname" name="firstname" placeholder="Nguyễn Văn A">
-                                
-                                <label for="email"><i class="fa fa-phone"></i> Số điện thoại</label>
-                                <input type="text" id="phone" name="phone" placeholder="0123456789">
-                                <label for="adr"><i class="fa fa-envelope"></i> Mail</label>
-                                <input type="text" id="mail" name="mail" placeholder="teoem@example.com">
+                                <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
+
+                                <label for="phone"><i class="fa fa-phone"></i> Số điện thoại</label>
+                                <input type="text" id="phone" name="phone" placeholder="0123456789" required>
+                                <label for="email"><i class="fa fa-envelope"></i> Mail</label>
+                                <input type="text" id="email" name="email" placeholder="teoem@example.com" required>
                                 <label for="city"><i class="fa fa-institution"></i> Công việc cần tuyển dụng</label>
-                                <textarea style="    width: 100%;" name="work" id="work" cols="100" rows="10" placeholder="    giám đốc or phó giám đốc"></textarea>
+                                <textarea style="width: 100%;" name="register_works" id="register_works" cols="100" rows="10"
+                                    placeholder="giám đốc or phó giám đốc" required></textarea>
                                 <div class="row">
                                     <div class="col-50">
-                                        <label for="state">Địa điểm</label>
-                                        <input type="text" id="state" name="state" placeholder="Q.1">
+                                        <label for="address">Địa điểm làm việc</label>
+                                        <input type="text" id="address" name="address" placeholder="Q.1" required>
                                     </div>
                                     <div class="col-50">
-                                        <label for="zip">Số lượng</label>
-                                        <input type="text" id="zip" name="zip" placeholder="100 Người">
+                                        <label for="order">Số lượng</label>
+                                        <input type="text" id="order" name="order" placeholder="100 Người" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <input type="submit" value="Gửi" class="btn">
                     </form>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>

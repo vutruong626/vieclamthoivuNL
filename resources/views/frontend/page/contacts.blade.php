@@ -23,7 +23,7 @@
     <div class="google-map-area">
         <!--  Map Section -->
         <div id="contacts" class="map-area">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4937.119046954671!2d106.62968603997088!3d10.842347004666033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x106dce19714c81ed!2zQ8O0bmcgVHkgVE5ISCBDdW5nIOG7qG5nIE5ow6JuIEzhu7FjIE5ndXnhu4VuIExhbg!5e0!3m2!1svi!2s!4v1568877138865!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;width: 100%;" allowfullscreen=""></iframe>
+            {!! $show_contact->map !!}
         </div>
     </div>
 </div>
@@ -39,18 +39,25 @@
                         </div>
                         <div class="contact-add">
                             <h3>Địa chỉ</h3>
-                            <p> 592/ 17 Nguyễn Văn Quá. P. Đông Hưng Thuận </p>
-                            <p>Quận 12 TP.HCM</p>
+                            <p> {{$show_contact->address}}</p>
                         </div>
                     </div>
                     <div class="single-contact mb-65">
                         <div class="contact-icon">
-                            <img src="img/contact/contact2.png" alt="contact">
+                            <a href="tel:+{{$show_contact->phone}}"><img src="img/contact/contact2.png" alt="contact"></a>
                         </div>
                         <div class="contact-add">
                             <h3>Số điện thoại</h3>
-                            <p>0961359069 </p>
-                            <p>0909124440 </p>
+                            <p>{{$show_contact->phone}}</p>
+                        </div>
+                    </div>
+                    <div class="single-contact mb-65">
+                        <div class="contact-icon">
+                            <a href="tel:+{{$show_contact->phone_2}}"><img src="img/contact/contact2.png" alt="contact"></a>
+                        </div>
+                        <div class="contact-add">
+                            <h3>Số điện thoại</h3>
+                            <p>{{$show_contact->phone_2}}</p>
                         </div>
                     </div>
                     <!-- <div class="single-contact">
@@ -69,25 +76,30 @@
                 <div class="reply-area">
                     <h3>ĐỂ LẠI LỜI NHẮN CHO CHÚNG TÔI</h3>
                     <p>Chúng tôi sẽ trả lời sớm nhất cho bạn trong vài giờ tới cảm ơn bạn</p>
-                    <form id="contact-form" action="http://preview.hasthemes.com/eduhome/mail.php" method="post">
+                    <form action="{{route('post_contacts')}}" method="post">
+                        {{csrf_field()}}
                         <div class="row">
                             <div class="col-md-12">
                                 <p>Họ & Tên</p>
-                                <input type="text" name="name" id="name">
+                                <input type="text" name="name" id="name" required>
+                            </div>
+                            <div class="col-md-12">
+                                <p>Số điện thoại</p>
+                                <input type="text" name="phone" id="phone" required>
                             </div>
                             <div class="col-md-12">
                                 <p>Email</p>
-                                <input type="text" name="email" id="email">
+                                <input type="text" name="email" id="email" required>
                             </div>
                             <div class="col-md-12">
                                 <p>Công việc</p>
-                                <input type="text" name="subject" id="subject">
-                                <p>Nọi Dung</p>
-                                <textarea name="message" id="message" cols="15" rows="10"></textarea>
+                                <input type="text" name="work" id="work" required>
+                                <p>Nội Dung</p>
+                                <textarea name="body" id="body" cols="15" rows="10" required></textarea>
                             </div>
                         </div>
-                        <a class="reply-btn" href="#" data-text="send"><span>Gửi</span></a>
-                        <p class="form-messege"></p>
+                        <input type="submit" value="Gửi" class="btn">
+
                     </form>
                 </div>
             </div>

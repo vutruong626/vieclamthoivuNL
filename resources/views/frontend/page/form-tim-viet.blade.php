@@ -18,44 +18,72 @@
 </div>
 <!-- Banner Area End -->
 <br>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        @if($message = Session::get('err'))
+        <div class="panel-body">
+            <div class="alert alert-warning" role="alert">
+                {{$message}}
+            </div>
+        </div>
+        @endif
+    </div>
+</div>
 <!-- About Start -->
 <div class="about-area ">
     <div class="container">
         <div class="row">
             <div class="col-75">
                 <div class="container-vt">
-                    <form action="" method="POST">
+                    <form action="{{route('post_register')}}" method="post">
+                        {{csrf_field()}}
                         <div class="row">
                             <div class="col-50">
                                 <h3>Thông tin bắt buộc</h3>
                                 <br>
                                 <label for="fname"><i class="fa fa-user"></i> Họ tên</label>
-                                <input type="text" id="fname" name="firstname" placeholder="Nguyễn Văn A">
-                                
+                                <input type="text" id="fname" name="name" placeholder="Nguyễn Văn A" class="" required>
+                                @if($errors->has('name'))
+                                <div class="text-danger" style="color:#2196F3;">{{$errors->first('name')}}</div>
+                                @endif
                                 <label for="email"><i class="fa fa-phone"></i> Số điện thoại</label>
-                                <input type="text" id="phone" name="phone" placeholder="0123456789">
-                                <label for="adr"><i class="fa fa-address-card-o"></i> Nơi ở</label>
-                                <input type="text" id="adr" name="address" placeholder="99/99/quang trung/f8/Q.GV.HCM">
-                                <label for="city"><i class="fa fa-institution"></i> Công việc đăng ký</label>
-                                <input type="text" id="city" name="city" placeholder="giám đốc or phó giám đốc">
+                                <input type="text" id="phone" name="phone" placeholder="0123456789" required>
+                                @if($errors->has('phone'))
+                                <div class="text-danger" style="color:#2196F3;">{{$errors->first('phone')}}</div>
+                                @endif
+                                <label for="address"><i class="fa fa-address-card-o"></i> Nơi ở</label>
+                                <input type="text" id="address" name="address"
+                                    placeholder="99/99/quang trung/f8/Q.GV.HCM" required>
+                                <div>
+                                    <label for="city"><i class="fa fa-institution"></i> Công việc đăng ký</label>
+                                    <select id="register_works" name="register_works" style="width: 48.5%;height: 34px;margin-bottom: 14px;">
+                                        <option value="Không chọn">Chọn công việc</option>
+                                        <option value="Thời vụ">Thời vụ</option>
+                                        <option value="Cố định"> Cố định</option>
+                                    </select>
+                                </div>
+                                <!-- <input type="text" id="register_works" name="register_works"
+                                    placeholder="giám đốc or phó giám đốc" required> -->
                                 <div class="row">
                                     <div class="col-50">
-                                        <label for="state">Còn đi học </label>
-                                        <input type="text" id="state" name="state" placeholder="Cao đẵng/Đại học">
+                                        <label for="till_student">Còn đi học </label>
+                                        <input type="text" id="till_student" name="till_student"
+                                            placeholder="Cao đẵng/Đại học" required>
                                     </div>
                                     <div class="col-50">
-                                        <label for="zip">Đã đi làm (Kinh nghiệm)</label>
-                                        <input type="text" id="zip" name="zip" placeholder="Công việc đã làm">
+                                        <label for="experience">Đã đi làm (Kinh nghiệm)</label>
+                                        <input type="text" id="experience" name="experience"
+                                            placeholder="Công việc đã làm" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <input type="submit" value="Gửi" class="btn">
                     </form>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
